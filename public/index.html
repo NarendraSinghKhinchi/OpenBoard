@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenBoard</title>
+    <script src="https://kit.fontawesome.com/976fc62358.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="menu-cont">
+        <i class="fa-solid fa-bars icon visible"></i>
+        <i class="fa-sharp fa-solid icon fa-xmark "></i>
+    </div>
+    <div class="top-cont">
+        <div class="pen-cont">
+            <img src="./images/feather-pen.png" class="img" alt="" srcset="">
+        </div>
+        <div class="eraser-cont">
+            <img src="./images/eraser-tool.png" class="img" alt="" srcset="">
+        </div>
+        <div class="download-cont">
+            <img src="./images/download (1).png" class="img" alt="" srcset="">
+        </div>
+        <div class="upload-cont">
+            <img src="./images/upload.png" class="img" alt="" srcset="">
+        </div>
+        <div class="sticky-cont">
+            <img src="./images/notes.png" class="img" alt="" srcset="">
+        </div>
+        <div class="redo-cont">
+            <img src="./images/redo.png" class="img" alt="" srcset="">
+        </div>
+        <div class="undo-cont">
+            <img src="./images/undo.png" class="img" alt="" srcset="">
+        </div>
+    </div>
+    <div class="pen-options">
+        <div class="pen-width">
+            <input type="range" name="" id="penWidth" min="2" max="10" value="3" class="slider">
+        </div>
+        <div class="pen-color-cont">
+            <div class="black pen-color"></div>
+            <div class="blue pen-color"></div>
+            <div class="pink pen-color"></div>
+        </div>
+    </div>
+    <div class="eraser-options">
+        <div class="eraser-width">
+            <input type="range" name="" id="eraserWidth" min="2" max="20" value="3" class="slider">
+        </div>
+    </div>
+    <!-- <div class="sticky-note-cont">
+        <div class="sticky-controls">
+            <div class="minimize green">
+                <i class="fa-sharp fa-solid fa-down-left-and-up-right-to-center"></i>
+            </div>
+            <div class="remove cadetblue">
+                <i class="fa-sharp fa-solid fa-xmark "></i>
+            </div>
+        </div>
+        <div class="sticky-note">
+            <textarea name="" id="" cols="20" rows="11" spellcheck="false"></textarea>
+        </div>
+    </div> -->
+    <canvas class="canvas"></canvas>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script>
+       const socket = io.connect("http://localhost:3000");
+    </script>
+    <script src="./script.js"></script>
+    <script src="./canvas.js"></script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+*{
+    box-sizing: border-box;
+}
+/* default setting for body tag */
+body{
+    margin: 0;
+    padding: 0;
+    background-color:rgb(152, 154, 156);
+}
+/* menu like button name hamburger */
+.menu-cont{
+    width: 3rem;
+    height: 3rem;
+    background-color: rgb(79, 75, 75);
+    position: absolute;
+    top: 3vh;
+    left: 2rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: white;
+    box-shadow:  rgba(0, 91, 139, 0.35) 0px 10px 10px 2px;
+    cursor: pointer;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+/* container where all the functionalities tags are present except menu */
+.top-cont{
+    width: 70vw;
+    height: 8vh;
+    min-width: 350px;
+    min-height: 3rem;
+    background-color: rgb(79, 75, 75);
+    box-shadow:  rgba(0, 91, 139, 0.35) 0px 10px 10px 2px;
+    /*box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;*/
+    z-index: 4;
+    cursor: move;
+    position: absolute;
+    top: 3vh;
+    left: calc((100vw - 70vw)/2);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    animation-name: scale-top-cont;
+    animation-iteration-count: 1;
+    animation-duration: 1.5s;
+}
+@keyframes scale-top-cont {
+    0%{
+        transform: scale(0.5);
+    }
+    100%{
+        transform: scale(1.0);
+    }
+}
+/* different functionalities provided by developer to user */
+.top-cont >*{
+    width: 10%;
+    height: 90%;
+    max-width: 3rem;
+    min-height: 3rem;
+    min-width: 3rem;
+    /* background-color:rgb(95, 98, 100); */
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* every functionality ui has this class */
+.img{
+    width: 80%;
+    height: 80%;
+}
+
+/* to select color and darkness of pen */
+.pen-options{
+    width: 8rem;
+    height: 3rem;
+    background-color: rgb(79, 75, 75);
+    box-shadow:  rgba(0, 91, 139, 0.35) 0px 10px 10px 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    top:11.2vh;
+    left:calc((100vw - 70vw)/2);
+    border-radius: 10px;
+    display: none;
+}
+.slider{
+    cursor: pointer;
+    width: 90%;
+}
+
+/* can be used to set width of pen  */
+.pen-width{ 
+    /* background-color: brown; */
+    width: 80%;
+    height: 50%;
+}
+.pen-color-cont{
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
+.pen-color{
+    width: 25%;
+    height: 90%;
+    border-radius: 50%;
+}
+.blue{
+    background-color: rgb(27, 121, 243);
+}
+.black{
+    background-color: rgb(16, 17, 17);
+}
+.pink{
+    background-color: rgb(219, 2, 226);
+}
+/* erase options  */
+.eraser-options{
+    width: 8rem;
+    height: 2rem;
+    background-color: rgb(79, 75, 75);
+    box-shadow:  rgba(0, 91, 139, 0.35) 0px 10px 10px 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:11.2vh;
+    left:calc((100vw - 45vw)/2);
+    border-radius: 10px;
+    display: none;
+}
+/* these classes are event triggered */
+.icon{
+    display: none;
+}
+.visible{
+    display: block;
+}
+
+/* these the modal that helps to write a new note */
+.sticky-note-cont{
+    /* width: 12rem;
+    height: 12rem; */
+    border-radius: 10px;
+    box-shadow:  rgba(0, 91, 139, 0.35) 0px 10px 10px 2px;
+    position: absolute;
+    top: 35%;
+    left: 25%;
+}
+.sticky-controls{
+    width: 12rem;
+    height: 1.2rem;
+    background-color: rgb(79, 75, 75);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: move;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.sticky-controls >*{
+    cursor: pointer;
+    z-index: 2;
+    width: 10%;
+    height: 80%;
+    border-radius: 50%;
+    margin-right: 0.2rem;
+}
+.green{
+    background-color: mediumseagreen ;
+}
+.cadetblue{
+    background-color:cadetblue;
+}
+.sticky-note{
+    width: 12rem;
+    height: 10.8rem;
+    /* display: none; */
+}
+.sticky-note > textarea{
+    width: 100%;
+    height: 100%;
+    resize: none;
+    background-color:rgb(152, 154, 156);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    z-index: 3;
+    background-repeat: no-repeat ;
+    background-position: top;
+    background-size:contain ;
+    object-fit:stretch ;
+}
+/* remove button of sticky note pad */
+.remove{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(175, 171, 171);
+}
+/* minimize btn of sticky note pad */
+.minimize{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(175, 171, 171);
+    font-size: 0.7rem;
+}
+.canvas{
+    cursor:default;
+}
+
