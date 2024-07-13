@@ -17,7 +17,7 @@ const server = app.listen(port , ()=>{
 
 const io = socket(server);
 io.on("connection" ,(socket)=>{
- console.log("new user connected");
+//  console.log("new user connected");
 
     socket.on("drawingStarted" , data=>{
         io.sockets.emit("drawingStarted" , data);
