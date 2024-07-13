@@ -20,21 +20,32 @@ io.on("connection" ,(socket)=>{
 //  console.log("new user connected");
 
     socket.on("drawingStarted" , data=>{
-        io.sockets.emit("drawingStarted" , data);
+        // io.sockets.emit("drawingStarted" , data);
+        socket.broadcast.emit('drawingStarted', data);
     })
     socket.on("penMoving" , data=>{
-        io.sockets.emit("penMoving" , data);
+        // io.sockets.emit("penMoving" , data);
+        socket.broadcast.emit('penMoving', data);
+
     })
     socket.on("drawingComplete" ,()=>{
-        io.sockets.emit("drawingComplete");
+        // io.sockets.emit("drawingComplete");
+        socket.broadcast.emit('drawingComplete');
+
     })
     socket.on("undo" ,()=>{
-        io.sockets.emit("undo");
+        // io.sockets.emit("undo");
+        socket.broadcast.emit('undo');
+
     })
     socket.on("redo" , ()=>{
-        io.sockets.emit("redo");
+        // io.sockets.emit("redo");
+        socket.broadcast.emit('redo');
+
     })
     socket.on("configChang" , data=>{
-        io.sockets.emit("configChang" , data);
+        // io.sockets.emit("configChang" , data);
+        socket.broadcast.emit('configChang', data);
+
     })
 });  

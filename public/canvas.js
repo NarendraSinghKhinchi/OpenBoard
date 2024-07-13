@@ -67,7 +67,7 @@ canvas.addEventListener("mousedown", e=>{
         x : e.clientX ,
         y : e.clientY
     }
-    // locatePen(data);
+    locatePen(data);
     socket.emit("drawingStarted" , data); // sending data to server
 })
 canvas.addEventListener("mousemove" , e=>{
@@ -76,12 +76,12 @@ canvas.addEventListener("mousemove" , e=>{
             x : e.clientX ,
             y : e.clientY
         }
-        // draw(data);
+        draw(data);
         socket.emit("penMoving" , data);
     }
 })
 canvas.addEventListener("mouseup" , e=>{
-    // finishDrawing();
+    finishDrawing();
     socket.emit("drawingComplete");
 })
 
@@ -106,7 +106,7 @@ erasWidthSelect.addEventListener("click" , e=>{
 
 
 undo_cont.addEventListener("click", e=>{
-    // unDo();
+    unDo();
     socket.emit("undo");
 });
 function unDo(){
@@ -125,7 +125,7 @@ function unDo(){
     }
 }
 redo_cont.addEventListener("click" , e=>{
-    // reDo();
+    reDo();
     socket.emit("redo");
 });
 function reDo(){
